@@ -1,0 +1,111 @@
+/* Webfont: Luciole-Regular */
+@font-face {
+  font-family: 'Luciole';
+  src: url('./fonts/Luciole/Luciole-Regular/Luciole-Regular.eot'); /* IE9 Compat Modes */
+  src: url('./fonts/Luciole/Luciole-Regular/Luciole-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('./fonts/Luciole/Luciole-Regular/Luciole-Regular.woff')
+      format('woff'),
+    /* Modern Browsers */
+      url('./fonts/Luciole/Luciole-Regular/Luciole-Regular.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('./fonts/Luciole/Luciole-Regular/Luciole-Regular.svg#Luciole-Regular')
+      format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Luciole';
+  src: url('./fonts/Luciole/Luciole-Bold/Luciole-Bold.eot'); /* IE9 Compat Modes */
+  src: url('./fonts/Luciole/Luciole-Bold/Luciole-Bold.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('./fonts/Luciole/Luciole-Bold/Luciole-Bold.woff')
+      format('woff'),
+    /* Modern Browsers */ url('./fonts/Luciole/Luciole-Bold/Luciole-Bold.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('./fonts/Luciole/Luciole-Bold/Luciole-Bold.svg#Luciole-Bold')
+      format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Luciole';
+  src: url('./fonts/Luciole/Luciole-Italic/Luciole-Italic.eot'); /* IE9 Compat Modes */
+  src: url('./fonts/Luciole/Luciole-Italic/Luciole-Italic.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('./fonts/Luciole/Luciole-Italic/Luciole-Italic.woff')
+      format('woff'),
+    /* Modern Browsers */
+      url('./fonts/Luciole/Luciole-Italic/Luciole-Italic.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('./fonts/Luciole/Luciole-Italic/Luciole-Italic.svg#Luciole-Italic')
+      format('svg'); /* Legacy iOS */
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Luciole';
+  src: url('./fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.eot'); /* IE9 Compat Modes */
+  src: url('./fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('./fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.woff')
+      format('woff'),
+    /* Modern Browsers */
+      url('./fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('./fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.svg#Luciole-BoldItalic')
+      format('svg'); /* Legacy iOS */
+  font-style: italic;
+  font-weight: 700;
+}
+
+:root {
+  --main-family: 'Luciole', Helvetica, Arial, sans-serif;
+  --dark: #0b0b0b;
+  --white: #fafafa;
+}
+
+[data-selected-theme='dark'] {
+}
+
+[data-selected-theme='light'] {
+}
+
+html {
+  font-family: var(--main-family);
+  background-color: var(--bg-primary);
+  color: var(--color-primary);
+  min-height: 100vh;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  font-size: 16px;
+}
+
+main {
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
