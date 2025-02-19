@@ -69,20 +69,35 @@
 
 :root {
   --main-family: 'Luciole', Helvetica, Arial, sans-serif;
-  --dark: #0b0b0b;
-  --white: #fafafa;
 }
 
+:root,
 [data-selected-theme='dark'] {
+  --bg-color: #222;
+  --color: #fafafa;
+  --color-primary: #89c4f4;
+  --color-secondary: #f29292;
+
+  /* --color: #323232;
+  --color-primary: #0000c8;
+  --color-secondary: #960000;*/
 }
 
 [data-selected-theme='light'] {
+  --bg-color: #fafafa;
+
+  /*--color: #c8c8c8;
+  --color-primary: #00ff00;
+  --color-secondary: #ff0000;*/
+  --color: #333329;
+  --color-primary: #2653a6;
+  --color-secondary: #d33b3b;
 }
 
 html {
   font-family: var(--main-family);
-  background-color: var(--bg-primary);
-  color: var(--color-primary);
+  background-color: var(--bg-color);
+  color: var(--color);
   min-height: 100vh;
 }
 
@@ -91,10 +106,25 @@ body {
   margin: 0;
   min-height: 100vh;
   width: 100%;
-  font-size: 16px;
+  font-size: 20px;
+}
+
+* {
+  outline: none;
 }
 
 main {
+}
+
+.content {
+  max-width: 900px;
+  margin: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    margin: 1em;
+  }
 }
 
 .sr-only {
@@ -108,4 +138,114 @@ main {
   position: absolute !important;
   width: 1px !important;
   white-space: nowrap !important;
+}
+
+h1,
+h2 {
+  color: var(--color-primary);
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+.question {
+  font-size: 1.8;
+  border: 0.1em solid var(--color);
+  border-radius: 2em;
+  padding: 1em;
+  text-align: center;
+  margin: 3em 0;
+}
+
+p {
+  line-height: 1.5;
+}
+
+button {
+  background-color: var(--bg-color);
+  border: 0.1rem solid var(--color-primary);
+  color: var(--color-primary);
+  cursor: pointer;
+  width: 10em;
+  padding: 0.5em 1em;
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  font-family: var(--main-family);
+  font-size: 1em;
+}
+
+/*button:focus-visible,*/
+button:hover {
+  color: var(--bg-color);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*a:focus-visible*/
+a:hover,
+a.active {
+  text-decoration-thickness: 0.2em;
+  text-decoration-line: underline;
+  text-decoration-style: unset;
+  text-underline-offset: 0.5em;
+}
+
+a.active {
+  text-decoration-color: var(--red);
+}
+
+/*a:focus-visible*/
+a:hover,
+a.active:hover {
+  text-decoration-color: var(--color-primary);
+}
+
+.astuce .light {
+  text-align: center;
+}
+
+.astuce .fa-lightbulb {
+  font-size: 2em;
+  color: var(--color-secondary);
+}
+
+.form {
+  display: flex;
+  margin-bottom: 2em;
+}
+
+.form legend {
+  margin-bottom: 2em;
+}
+
+.form fieldset {
+  margin: auto;
+}
+
+.form label {
+  margin-bottom: 0.5em;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.group input,
+.group textarea {
+  max-width: 40em;
+  padding: 0.5em;
 }
