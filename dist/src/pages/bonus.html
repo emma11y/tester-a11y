@@ -1,0 +1,45 @@
+<h2>Bonus</h2>
+
+<p>
+  Sur ce site, il y a des attributs ARIA pour rendre accessible certaines
+  fonctionnalités.
+</p>
+
+<h3>Qu'est ce qu'est ARIA ?</h3>
+
+<p>
+  ARIA signifie <span lang="en">Accessible Rich Internet Applications</span>.
+  C'est une spécification qui propose la possibilité de définir, sur les
+  composants simples et riches, une
+  <span class="font-bold">description</span> des rôles, des états et des
+  propriétés, de manière à ce qu’ils soient
+  <span class="font-bold">reconnaissables et utilisables</span> par les
+  utilisateurs et utilisatrices de technologies d’assistance.
+</p>
+
+<p>
+  Avec les attributs ARIA, on permet de
+  <span class="font-bold">faciliter</span> la navigation au clavier et la
+  restitution des informations via le lecteur d’écran.
+</p>
+
+<h3>Quels attributs sont-ils utilisés sur ce site ?</h3>
+
+<ul>
+  <li>
+    L'attribut <code>aria-current</code> permet de vocaliser la page courante.
+    Vous pouvez voir que sur la balise <code>a</code>, en plus de la classe
+    <code>.active</code>, il y a <code>aria-current</code>. La classe n'est pas
+    vocalisable, mais l'attribut oui.
+  </li>
+  <li>
+    L'attribut <code>aria-hidden</code> permet de cacher l'élément aux lecteurs
+    d'écran car les icônes ne sont pas restitués correctement. Pour compléter
+    l'icône, mettre un <code>span</code> avec la classe <code>.sr-only</code> et
+    le libellé.
+  </li>
+  <li>
+    L'attribut <code>aria-pressed</code> sur le bouton permet de vocaliser que
+    celui-ci est enfoncé ou non.
+  </li>
+</ul>

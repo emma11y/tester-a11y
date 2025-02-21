@@ -3,7 +3,18 @@ const absolutePath = 'https://emma11y.github.io/tester-a11y';
 const titlePage = `Comment tester l'accessibilité d'un site internet ?`;
 
 window.onload = () => {
-  this.loadComponents();
+  document.querySelector('#app').innerHTML = `
+    <main role="main">
+      <custom-header></custom-header>
+
+      <div class="content">
+        <app-router></app-router>
+      </div>
+
+      <custom-footer></custom-footer>
+    </main>`;
+
+  loadComponents();
 };
 
 function loadComponents() {
@@ -14,10 +25,25 @@ function loadComponents() {
   customElements.define('custom-picture', CustomPicture);
 }
 
+const routes = {
+  '/': 'pages/accueil.html',
+  '/cas-pratique-1': 'pages/cas-pratique-1.html',
+  '/cas-pratique-2': 'pages/cas-pratique-2.html',
+  '/cas-pratique-3': 'pages/cas-pratique-3.html',
+  '/cas-pratique-4': 'pages/cas-pratique-5.html',
+  '/cas-pratique-5': 'pages/cas-pratique-6.html',
+  '/cas-pratique-6': 'pages/cas-pratique-7.html',
+  '/ci-cd': 'pages/ci-cd.html',
+  '/bonus': 'pages/bonus.html',
+  '/ressources': 'pages/ressources.html',
+  '/a-propos': 'pages/a-propos.html',
+  '/erreur': 'pages/erreur.html',
+};
+
 class CustomHeader extends HTMLElement {
   async connectedCallback() {
-    loadStylesheet('/components/header/header.css');
-    this.innerHTML = await getHtmlContent('/components/header/header.html');
+    loadStylesheet('/src/components/header/header.css');
+    this.innerHTML = await getHtmlContent('/src/components/header/header.html');
 
     this.initTheme();
     setAriaCurrentPage();
@@ -117,51 +143,51 @@ class AppRouter extends HTMLElement {
     let filename = '';
     switch (path) {
       case '/':
-        filename = '/pages/accueil.html';
+        filename = '/src/pages/accueil.html';
         title = 'Accueil';
         break;
       case '/cas-pratique-1':
-        filename = '/pages/cas-pratique-1.html';
+        filename = '/src/pages/cas-pratique-1.html';
         title = 'Cas pratique n°1 : les contrastes';
         break;
       case '/cas-pratique-2':
-        filename = '/pages/cas-pratique-2.html';
+        filename = '/src/pages/cas-pratique-2.html';
         title = 'Cas pratique n°2 : la langue';
         break;
       case '/cas-pratique-3':
-        filename = '/pages/cas-pratique-3.html';
+        filename = '/src/pages/cas-pratique-3.html';
         title = 'Cas pratique n°3 : les images';
         break;
       case '/cas-pratique-4':
-        filename = '/pages/cas-pratique-4.html';
+        filename = '/src/pages/cas-pratique-4.html';
         title = 'Cas pratique n°4 : le formulaire';
         break;
       case '/cas-pratique-5':
-        filename = '/pages/cas-pratique-5.html';
+        filename = '/src/pages/cas-pratique-5.html';
         title = 'Cas pratique n°5 : les liens';
         break;
       case '/cas-pratique-6':
-        filename = '/pages/cas-pratique-6.html';
+        filename = '/src/pages/cas-pratique-6.html';
         title = 'Cas pratique n°6 : les boutons';
         break;
       case '/ci-cd':
-        filename = '/pages/ci-cd.html';
+        filename = '/src/pages/ci-cd.html';
         title = 'Tests automatisés';
         break;
       case '/bonus':
-        filename = '/pages/bonus.html';
+        filename = '/src/pages/bonus.html';
         title = 'Bonus';
         break;
       case '/ressources':
-        filename = '/pages/ressources.html';
+        filename = '/src/pages/ressources.html';
         title = 'Ressources';
         break;
       case '/a-propos':
-        filename = '/pages/a-propos.html';
+        filename = '/src/pages/a-propos.html';
         title = 'A propos';
         break;
       default:
-        filename = '/pages/erreur.html';
+        filename = '/src/pages/erreur.html';
         title = 'Erreur 404';
     }
 
@@ -222,7 +248,7 @@ function setAriaCurrentPage() {
     }
 
     link.addEventListener('click', () => {
-      this.setAriaCurrentPage();
+      setAriaCurrentPage();
     });
   });
 }
