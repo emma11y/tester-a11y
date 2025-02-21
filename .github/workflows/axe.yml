@@ -22,9 +22,12 @@ jobs:
           npm run build --if-present
           npm install -g @axe-core/cli@4.x.x
 
-      - name: Start Axe server
-        run: npm start & npx wait-on https://localhost:8080
-
       - name: Run axe
         run: |
-          axe https://localhost:8080 --reporter html > axe-report.html --exit
+          axe https://emma11y.github.io/tester-a11y/ --reporter html > axe-report.html --exit
+          axe https://emma11y.github.io/tester-a11y/cas-pratique-1 
+          axe https://emma11y.github.io/tester-a11y/cas-pratique-2 
+          axe https://emma11y.github.io/tester-a11y/cas-pratique-3
+          axe https://emma11y.github.io/tester-a11y/cas-pratique-4 
+          axe https://emma11y.github.io/tester-a11y/cas-pratique-5 
+          axe https://emma11y.github.io/tester-a11y/cas-pratique-6

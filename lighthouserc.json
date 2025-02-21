@@ -2,13 +2,27 @@
   "ci": {
     "collect": {
       "url": [
-        "https://localhost:8080",
-        "https://emma11y.github.io/tester-a11y/"
+        "https://emma11y.github.io/tester-a11y/",
+        "https://emma11y.github.io/tester-a11y/cas-pratique-1",
+        "https://emma11y.github.io/tester-a11y/cas-pratique-2",
+        "https://emma11y.github.io/tester-a11y/cas-pratique-3",
+        "https://emma11y.github.io/tester-a11y/cas-pratique-4",
+        "https://emma11y.github.io/tester-a11y/cas-pratique-5",
+        "https://emma11y.github.io/tester-a11y/cas-pratique-6"
       ],
-      "startServerCommand": "npm start"
+      "startServerCommand": "npm start",
+      "settings": {
+        "onlyAudits": ["accessibility"],
+        "onlyCategories": ["accessibility"]
+      }
     },
     "upload": {
       "target": "temporary-public-storage"
+    },
+    "assertions": {
+      "assertions": {
+        "categories:accessibility": ["error", { "minScore": 1 }]
+      }
     }
   }
 }

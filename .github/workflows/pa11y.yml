@@ -22,9 +22,12 @@ jobs:
           npm run build --if-present
           npm install -g pa11y@8.0.0
 
-      - name: Start Axe server
-        run: npm start & npx wait-on https://localhost:8080
-
       - name: Run pa11y
         run: |
-          pa11y https://localhost:8080 --reporter html > pa11y-report.html
+          pa11y https://emma11y.github.io/tester-a11y/ --reporter html > pa11y-report.html
+          pa11y https://emma11y.github.io/tester-a11y/cas-pratique-1 
+          pa11y https://emma11y.github.io/tester-a11y/cas-pratique-2 
+          pa11y https://emma11y.github.io/tester-a11y/cas-pratique-3
+          pa11y https://emma11y.github.io/tester-a11y/cas-pratique-4 
+          pa11y https://emma11y.github.io/tester-a11y/cas-pratique-5 
+          pa11y https://emma11y.github.io/tester-a11y/cas-pratique-6
