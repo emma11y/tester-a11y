@@ -6,11 +6,10 @@
   "scripts": {
     "start": "npx http-server -p 8080"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@axe-core/cli": "^4.10.1",
     "@lhci/cli": "^0.14.0"
+  },
+  "devDependencies": {
+    "@axe-core/cli": "^4.10.1"
   }
 }
