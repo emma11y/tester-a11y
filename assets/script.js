@@ -189,6 +189,10 @@ async function getHtmlContent(htmlFileName) {
 }
 
 function loadStylesheet(url) {
+  if (isProd) {
+    url = absolutePath + url;
+  }
+
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   link.type = 'text/css';
