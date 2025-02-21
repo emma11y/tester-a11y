@@ -1,4 +1,5 @@
 const isProd = window.location.hostname.includes('emma11y.github.io');
+const absolutePath = 'https://emma11y.github.io/tester-a11y/';
 const titlePage = `Comment tester l'accessibilité d'un site internet ?`;
 
 window.onload = () => {
@@ -108,7 +109,7 @@ class AppRouter extends HTMLElement {
   }
 
   async handleRoute() {
-    const path = window.location.pathname;
+    const path = window.location.pathname.replace('tester-a11y', '');
 
     let title = '';
     let filename = '';
