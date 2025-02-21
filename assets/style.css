@@ -69,6 +69,7 @@
 
 :root {
   --main-family: 'Luciole', Helvetica, Arial, sans-serif;
+  --color-white: #fafafa;
 }
 
 :root,
@@ -77,6 +78,7 @@
   --color: #fafafa;
   --color-primary: #89c4f4;
   --color-secondary: #f29292;
+  --color-red: #db2958;
 
   /* --color: #323232;
   --color-primary: #0000c8;
@@ -92,6 +94,7 @@
   --color: #333329;
   --color-primary: #2653a6;
   --color-secondary: #d33b3b;
+  --color-red: #ee1b48;
 }
 
 html {
@@ -117,12 +120,10 @@ main {
 }
 
 .content {
-  max-width: 900px;
+  max-width: 1200px;
   margin: auto;
-}
 
-@media screen and (max-width: 1200px) {
-  .content {
+  @media screen and (max-width: 1200px) {
     margin: 1em;
   }
 }
@@ -151,6 +152,11 @@ h1 {
 
 h2 {
   font-size: 2em;
+  text-align: center;
+}
+
+.font-bold {
+  font-weight: bold;
 }
 
 .question {
@@ -162,8 +168,20 @@ h2 {
   margin: 3em 0;
 }
 
-p {
+p,
+li {
   line-height: 1.5;
+}
+
+ul {
+  li {
+    margin-bottom: 1em;
+  }
+}
+
+code {
+  border: 0.1em solid var(--color);
+  padding: 0 0.25em;
 }
 
 button {
@@ -178,74 +196,224 @@ button {
   justify-content: center;
   font-family: var(--main-family);
   font-size: 1em;
-}
 
-/*button:focus-visible,*/
-button:hover {
-  color: var(--bg-color);
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  &:focus-visible,
+  &:hover {
+    color: var(--bg-color);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
 }
 
 a {
   color: var(--color-primary);
   text-decoration: underline;
   cursor: pointer;
+
+  /*&:focus-visible,*/
+  &:hover {
+    text-decoration-thickness: 0.2em;
+    text-decoration-line: underline;
+    text-decoration-style: unset;
+    text-underline-offset: 0.5em;
+    text-decoration-color: var(--color-primary);
+  }
 }
 
-/*a:focus-visible*/
-a:hover,
-a.active {
-  text-decoration-thickness: 0.2em;
-  text-decoration-line: underline;
-  text-decoration-style: unset;
-  text-underline-offset: 0.5em;
-}
-
-a.active {
-  text-decoration-color: var(--red);
-}
-
-/*a:focus-visible*/
-a:hover,
-a.active:hover {
-  text-decoration-color: var(--color-primary);
-}
-
-.astuce .light {
-  text-align: center;
-}
-
-.astuce .fa-lightbulb {
-  font-size: 2em;
-  color: var(--color-secondary);
-}
-
-.form {
-  display: flex;
-  margin-bottom: 2em;
-}
-
-.form legend {
-  margin-bottom: 2em;
-}
-
-.form fieldset {
-  margin: auto;
-}
-
-.form label {
-  margin-bottom: 0.5em;
-}
-
-.group {
-  display: flex;
-  flex-direction: column;
+fieldset {
+  padding: 0;
+  margin: 0;
   margin-bottom: 1em;
+  border: none;
+
+  legend {
+    margin-bottom: 2em;
+  }
 }
 
-.group input,
-.group textarea {
-  max-width: 40em;
-  padding: 0.5em;
+.astuce {
+  display: flex;
+  flex-direction: row;
+
+  .light {
+    text-align: left;
+    align-content: center;
+    margin-right: 2em;
+  }
+
+  .fa-lightbulb {
+    font-size: 2em;
+    color: var(--color-secondary);
+  }
+}
+
+.cas-pratique-4 {
+  .form {
+    display: flex;
+    margin-bottom: 2em;
+    justify-content: center;
+
+    label {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+
+    input,
+    textarea {
+      max-width: 40em;
+      padding: 0.5em;
+    }
+  }
+}
+
+.cas-pratique-5 {
+  .buttons {
+    display: flex;
+
+    @media screen and (max-width: 699px) {
+      flex-direction: column;
+      justify-self: center;
+    }
+
+    button {
+      margin: 0 0.5em;
+      border-radius: 0.5em;
+
+      @media screen and (max-width: 699px) {
+        margin-left: 0;
+        margin-bottom: 0.5em;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    i {
+      font-size: 2em;
+    }
+  }
+
+  .astuce {
+    margin-top: 3em;
+  }
+}
+
+.cas-pratique-6 {
+  .cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+
+    .card {
+      width: 33%;
+      flex: 33%;
+
+      @media screen and (max-width: 699px) {
+        width: 100%;
+        flex: 100%;
+        margin-bottom: 2em;
+      }
+
+      a {
+        text-decoration: none;
+        border: 0.1em solid var(--color-primary);
+        border-radius: 0.5em;
+        padding: 1em;
+
+        &:hover,
+        &:focus-visible {
+          background-color: var(--color-primary);
+          color: var(--bg-color);
+        }
+      }
+    }
+  }
+}
+
+.a-propos {
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    @media screen and (max-width: 699px) {
+      flex-direction: column;
+    }
+  }
+
+  .avatar {
+    border-radius: 50%;
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+  }
+
+  .reseaux-sociaux {
+    ul {
+      list-style: none;
+      display: flex;
+      margin: auto;
+      padding: 0;
+      flex-direction: column;
+
+      li {
+        margin-bottom: 1em;
+
+        i {
+          vertical-align: middle;
+          font-size: 1.5em;
+          color: var(--color-primary);
+          width: 1.5em;
+          text-align: center;
+
+          &.fa-link {
+            font-size: 1.8em;
+          }
+        }
+      }
+    }
+  }
+
+  .logo-shodo {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      margin: 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .wrap-shodo {
+      padding: 0.5em 1em;
+      background-color: var(--color-red);
+    }
+
+    .wrap-logo {
+      background-color: var(--color-red);
+      color: var(--bg-color);
+      text-align: center;
+    }
+
+    p {
+      color: var(--color-white);
+      margin: 0;
+    }
+
+    .brand {
+      text-transform: uppercase;
+      width: 9em;
+      padding-left: 1em;
+    }
+  }
 }

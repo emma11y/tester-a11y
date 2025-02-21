@@ -10,6 +10,7 @@ function loadComponents() {
   customElements.define('router-link', RouterLink);
   customElements.define('custom-header', CustomHeader);
   customElements.define('custom-footer', CustomFooter);
+  customElements.define('custom-picture', CustomPicture);
 }
 
 class CustomHeader extends HTMLElement {
@@ -18,7 +19,7 @@ class CustomHeader extends HTMLElement {
     this.innerHTML = await getHtmlContent('/components/header/header.html');
 
     this.initTheme();
-    this.setAriaCurrentPage();
+    setAriaCurrentPage();
   }
 
   initTheme() {
@@ -66,6 +67,36 @@ class CustomHeader extends HTMLElement {
 
 class CustomFooter extends HTMLElement {}
 
+class CustomPicture extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    let img = document.createElement('img');
+    img.alt = this.attributes.alt.value;
+
+    img.src = `${window.location.protocol}//${window.location.host}/${this.attributes.src.value}`;
+    img.setAttribute('lazy', 'loading');
+
+    if (isProd) {
+      img.src = `${absolutePath}/${this.attributes.src.value}`;
+    }
+
+    if (this.attributes.style) {
+      img.style = this.attributes.style.value;
+    }
+
+    if (this.attributes.class) {
+      this.attributes.class.value.split(' ').forEach((value) => {
+        img.classList.add(value);
+      });
+    }
+
+    this.appendChild(img);
+  }
+}
+
 class AppRouter extends HTMLElement {
   constructor() {
     super();
@@ -110,9 +141,21 @@ class AppRouter extends HTMLElement {
         filename = '/pages/cas-pratique-6.html';
         title = 'Cas pratique n°6 : les boutons';
         break;
+      case '/ci-cd':
+        filename = '/pages/ci-cd.html';
+        title = 'Tests automatisés';
+        break;
+      case '/bonus':
+        filename = '/pages/bonus.html';
+        title = 'Bonus';
+        break;
       case '/ressources':
         filename = '/pages/ressources.html';
         title = 'Ressources';
+        break;
+      case '/a-propos':
+        filename = '/pages/a-propos.html';
+        title = 'A propos';
         break;
       default:
         filename = '/pages/erreur.html';
