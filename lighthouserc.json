@@ -1,12 +1,8 @@
 {
   "ci": {
     "collect": {
-      "url": [
-        "http://localhost:8080",
-        "https://emma11y.github.io/tester-a11y/"
-      ],
+      "url": ["https://emma11y.github.io/tester-a11y/"],
       "startServerCommand": "npm start",
-      "startServerReadyPattern": "listening on port",
       "settings": {
         "onlyAudits": ["accessibility"],
         "onlyCategories": ["accessibility"]
