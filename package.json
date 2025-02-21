@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "npx http-server -p 8080"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -1,4 +1,4 @@
-name: Accessibility Tests
+name: Accessibility Tests with Lighthouse
 on: [push, pull_request]
 
 jobs:

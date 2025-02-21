@@ -1,4 +1,4 @@
-name: axe
+name: Accessibility Tests with Axe
 on:
   push:
     branches: [main]
@@ -15,8 +15,8 @@ jobs:
           node-version: 12.x
       - run: npm ci
       - run: npm run build --if-present
-      - run: npm start & npx wait-on https://emma11y.github.io/tester-a11y/
+      - run: npm start & npx wait-on http://localhost:8080
       - name: Run axe
         run: |
           npm install -g @axe-core/cli
-          axe https://emma11y.github.io/tester-a11y/ --exit
+          axe http://localhost:8080 --exit
