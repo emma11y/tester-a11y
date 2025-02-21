@@ -1,0 +1,14 @@
+{
+  "ci": {
+    "collect": {
+      "url": ["http://localhost/"],
+      "startServerCommand": "npm start",
+      "startServerReadyPattern": "listening on port"
+    },
+    "assertions": {
+      "assertions": {
+        "categories:accessibility": ["error", { "minScore": 1 }]
+      }
+    }
+  }
+}
