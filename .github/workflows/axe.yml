@@ -24,7 +24,7 @@ jobs:
 
       - name: Run axe
         run: |
-          axe https://emma11y.github.io/tester-a11y/ --reporter html > axe-report.html --exit
+          axe https://emma11y.github.io/tester-a11y/
           axe https://emma11y.github.io/tester-a11y/cas-pratique-1 
           axe https://emma11y.github.io/tester-a11y/cas-pratique-2 
           axe https://emma11y.github.io/tester-a11y/cas-pratique-3

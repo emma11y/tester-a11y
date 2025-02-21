@@ -24,7 +24,7 @@ jobs:
 
       - name: Run pa11y
         run: |
-          pa11y https://emma11y.github.io/tester-a11y/ --reporter html > pa11y-report.html
+          pa11y https://emma11y.github.io/tester-a11y/
           pa11y https://emma11y.github.io/tester-a11y/cas-pratique-1 
           pa11y https://emma11y.github.io/tester-a11y/cas-pratique-2 
           pa11y https://emma11y.github.io/tester-a11y/cas-pratique-3
