@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@axe-core/cli": "^4.10.1",
-    "@lhci/cli": "^0.14.0"
+    "@lhci/cli": "^0.14.0",
+    "pa11y": "^8.0.0"
   }
 }
