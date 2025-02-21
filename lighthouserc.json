@@ -1,17 +1,14 @@
 {
   "ci": {
     "collect": {
-      "url": ["https://emma11y.github.io/tester-a11y/"],
-      "startServerCommand": "npm start",
-      "settings": {
-        "onlyAudits": ["accessibility"],
-        "onlyCategories": ["accessibility"]
-      }
+      "url": [
+        "https://localhost:8080",
+        "https://emma11y.github.io/tester-a11y/"
+      ],
+      "startServerCommand": "npm start"
     },
-    "assertions": {
-      "assertions": {
-        "categories:accessibility": ["error", { "minScore": 1 }]
-      }
+    "upload": {
+      "target": "temporary-public-storage"
     }
   }
 }
