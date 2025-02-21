@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
-  base: '/', // Remplace par le nom de ton repo GitHub
+  base: '/tester-a11y/', // Remplace par le nom de ton repo GitHub
   plugins: [
     viteStaticCopy({
       targets: [
