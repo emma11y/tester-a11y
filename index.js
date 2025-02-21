@@ -1,5 +1,5 @@
 const isProd = window.location.hostname.includes('emma11y.github.io');
-const absolutePath = 'https://emma11y.github.io/tester-a11y';
+const absolutePath = 'https://emma11y.github.io/';
 const titlePage = `Comment tester l'accessibilité d'un site internet ?`;
 
 window.onload = () => {
@@ -27,8 +27,8 @@ function loadComponents() {
 
 class CustomHeader extends HTMLElement {
   async connectedCallback() {
-    loadStylesheet('/src/components/header/header.css');
-    this.innerHTML = await getHtmlContent('/src/components/header/header.html');
+    loadStylesheet('components/header/header.css');
+    this.innerHTML = await getHtmlContent('components/header/header.html');
 
     this.initTheme();
     setAriaCurrentPage();
@@ -128,51 +128,51 @@ class AppRouter extends HTMLElement {
     let filename = '';
     switch (path) {
       case '/':
-        filename = '/src/pages/accueil.html';
+        filename = 'pages/accueil.html';
         title = 'Accueil';
         break;
       case '/cas-pratique-1':
-        filename = '/src/pages/cas-pratique-1.html';
+        filename = 'pages/cas-pratique-1.html';
         title = 'Cas pratique n°1 : les contrastes';
         break;
       case '/cas-pratique-2':
-        filename = '/src/pages/cas-pratique-2.html';
+        filename = 'pages/cas-pratique-2.html';
         title = 'Cas pratique n°2 : la langue';
         break;
       case '/cas-pratique-3':
-        filename = '/src/pages/cas-pratique-3.html';
+        filename = 'pages/cas-pratique-3.html';
         title = 'Cas pratique n°3 : les images';
         break;
       case '/cas-pratique-4':
-        filename = '/src/pages/cas-pratique-4.html';
+        filename = 'pages/cas-pratique-4.html';
         title = 'Cas pratique n°4 : le formulaire';
         break;
       case '/cas-pratique-5':
-        filename = '/src/pages/cas-pratique-5.html';
+        filename = 'pages/cas-pratique-5.html';
         title = 'Cas pratique n°5 : les liens';
         break;
       case '/cas-pratique-6':
-        filename = '/src/pages/cas-pratique-6.html';
+        filename = 'pages/cas-pratique-6.html';
         title = 'Cas pratique n°6 : les boutons';
         break;
       case '/ci-cd':
-        filename = '/src/pages/ci-cd.html';
+        filename = 'pages/ci-cd.html';
         title = 'Tests automatisés';
         break;
       case '/bonus':
-        filename = '/src/pages/bonus.html';
+        filename = 'pages/bonus.html';
         title = 'Bonus';
         break;
       case '/ressources':
-        filename = '/src/pages/ressources.html';
+        filename = 'pages/ressources.html';
         title = 'Ressources';
         break;
       case '/a-propos':
-        filename = '/src/pages/a-propos.html';
+        filename = 'pages/a-propos.html';
         title = 'A propos';
         break;
       default:
-        filename = '/src/pages/erreur.html';
+        filename = 'pages/erreur.html';
         title = 'Erreur 404';
     }
 
