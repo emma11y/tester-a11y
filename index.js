@@ -25,21 +25,6 @@ function loadComponents() {
   customElements.define('custom-picture', CustomPicture);
 }
 
-const routes = {
-  '/': 'pages/accueil.html',
-  '/cas-pratique-1': 'pages/cas-pratique-1.html',
-  '/cas-pratique-2': 'pages/cas-pratique-2.html',
-  '/cas-pratique-3': 'pages/cas-pratique-3.html',
-  '/cas-pratique-4': 'pages/cas-pratique-5.html',
-  '/cas-pratique-5': 'pages/cas-pratique-6.html',
-  '/cas-pratique-6': 'pages/cas-pratique-7.html',
-  '/ci-cd': 'pages/ci-cd.html',
-  '/bonus': 'pages/bonus.html',
-  '/ressources': 'pages/ressources.html',
-  '/a-propos': 'pages/a-propos.html',
-  '/erreur': 'pages/erreur.html',
-};
-
 class CustomHeader extends HTMLElement {
   async connectedCallback() {
     loadStylesheet('/src/components/header/header.css');
