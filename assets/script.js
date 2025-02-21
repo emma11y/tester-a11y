@@ -109,7 +109,9 @@ class AppRouter extends HTMLElement {
   }
 
   async handleRoute() {
-    const path = window.location.pathname.replace('tester-a11y', '');
+    const path = window.location.pathname
+      .replace('tester-a11y', '')
+      .replace('//', '/');
 
     let title = '';
     let filename = '';
