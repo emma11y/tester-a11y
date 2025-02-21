@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "url": ["http://localhost/"],
+      "url": ["https://emma11y.github.io/tester-a11y/"],
       "startServerCommand": "npm start",
       "startServerReadyPattern": "listening on port"
     },

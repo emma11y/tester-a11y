@@ -1,0 +1,14 @@
+{
+  "name": "tester-a11y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@axe-core/cli": "^4.10.1",
+    "@lhci/cli": "^0.14.0"
+  }
+}
