@@ -1,5 +1,5 @@
 const isProd = window.location.hostname.includes('emma11y.github.io');
-const absolutePath = 'https://emma11y.github.io/tester-a11y/';
+const absolutePath = 'https://emma11y.github.io/tester-a11y';
 const titlePage = `Comment tester l'accessibilité d'un site internet ?`;
 
 window.onload = () => {
@@ -192,7 +192,7 @@ async function getHtmlContent(htmlFileName) {
 
 function loadStylesheet(url) {
   if (isProd) {
-    url = absolutePath + url;
+    url = `${absolutePath}/${url}`;
   }
 
   const link = document.createElement('link');
@@ -234,7 +234,9 @@ class RouterLink extends HTMLElement {
 
   connectedCallback() {
     const link = document.createElement('a');
-    const href = this.attributes.href.value;
+    const href = isProd
+      ? absolutePath + this.attributes.href.value
+      : this.attributes.href.value;
 
     link.href = href;
     link.text = this.attributes.title.value;
