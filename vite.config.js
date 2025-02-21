@@ -11,8 +11,12 @@ export default defineConfig({
           dest: '', // Copie à la racine de /dist
         },
         {
-          src: 'src/components', // Le dossier à copier
-          dest: '', // Copie à la racine de /dist
+          src: 'src/components',
+          dest: '',
+        },
+        {
+          src: 'src/assets/img',
+          dest: 'src/assets/',
         },
       ],
     }),

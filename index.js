@@ -86,8 +86,7 @@ class CustomPicture extends HTMLElement {
   connectedCallback() {
     let img = document.createElement('img');
     img.alt = this.attributes.alt.value;
-
-    img.src = `${absolutePath}/${this.attributes.src.value}`;
+    img.src = this.attributes.src.value;
     img.setAttribute('lazy', 'loading');
 
     if (this.attributes.style) {
