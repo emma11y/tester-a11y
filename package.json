@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx http-server -p 8080"
   },
-  "devDependencies": {
+  "dependencies": {
     "@axe-core/cli": "^4.10.1",
     "@lhci/cli": "^0.14.0",
     "pa11y": "^8.0.0"
