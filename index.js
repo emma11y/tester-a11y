@@ -1,5 +1,4 @@
-const isProd = window.location.hostname.includes('emma11y.github.io');
-const absolutePath = 'https://emma11y.github.io/';
+const absolutePath = '/tester-a11y';
 const titlePage = `Comment tester l'accessibilité d'un site internet ?`;
 
 window.onload = () => {
@@ -88,12 +87,8 @@ class CustomPicture extends HTMLElement {
     let img = document.createElement('img');
     img.alt = this.attributes.alt.value;
 
-    img.src = `${window.location.protocol}//${window.location.host}/${this.attributes.src.value}`;
+    img.src = `${absolutePath}/${this.attributes.src.value}`;
     img.setAttribute('lazy', 'loading');
-
-    if (isProd) {
-      img.src = `${absolutePath}/${this.attributes.src.value}`;
-    }
 
     if (this.attributes.style) {
       img.style = this.attributes.style.value;
@@ -187,11 +182,7 @@ class AppRouter extends HTMLElement {
 }
 
 async function getHtmlContent(htmlFileName) {
-  if (isProd) {
-    htmlFileName = absolutePath + htmlFileName;
-  }
-
-  const responseHTML = await fetch(htmlFileName);
+  const responseHTML = await fetch(`${absolutePath}/${htmlFileName}`);
   if (!responseHTML.ok) {
     throw new Error(
       'Erreur lors du chargement du fichier HTML : ' + responseHTML.statusText
@@ -202,14 +193,10 @@ async function getHtmlContent(htmlFileName) {
 }
 
 function loadStylesheet(url) {
-  if (isProd) {
-    url = `${absolutePath}/${url}`;
-  }
-
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   link.type = 'text/css';
-  link.href = url;
+  link.href = `${absolutePath}/${url}`;
 
   document.head.appendChild(link);
 }
@@ -220,10 +207,13 @@ function setAriaCurrentPage() {
   routerLinks.forEach((routerLink) => {
     let link = routerLink.querySelector('a');
 
+    const path = window.location.pathname
+      .replace('tester-a11y', '')
+      .replace('//', '/');
+
     if (
-      window.location.pathname === routerLink.attributes.href.value ||
-      (window.location.pathname === '/' &&
-        routerLink.attributes.title.value === 'Accueil')
+      path === routerLink.attributes.href.value ||
+      (path === '/' && routerLink.attributes.title.value === 'Accueil')
     ) {
       link.setAttribute('aria-current', 'page');
       link.classList.add('active');
@@ -245,9 +235,8 @@ class RouterLink extends HTMLElement {
 
   connectedCallback() {
     const link = document.createElement('a');
-    const href = isProd
-      ? absolutePath + this.attributes.href.value
-      : this.attributes.href.value;
+
+    const href = absolutePath + this.attributes.href.value;
 
     link.href = href;
     link.text = this.attributes.title.value;
