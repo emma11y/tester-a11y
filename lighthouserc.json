@@ -10,7 +10,7 @@
         "https://emma11y.github.io/tester-a11y/cas-pratique-5",
         "https://emma11y.github.io/tester-a11y/cas-pratique-6"
       ],
-      "startServerCommand": "npm start",
+      "startServerCommand": "npm dev",
       "settings": {
         "onlyAudits": ["accessibility"],
         "onlyCategories": ["accessibility"]
