@@ -118,8 +118,6 @@ class AppRouter extends HTMLElement {
       .replace('tester-a11y', '')
       .replace('//', '/');
 
-    console.log('path', window.location.pathname, path);
-
     let title = '';
     let filename = '';
     switch (path) {
@@ -183,7 +181,6 @@ class AppRouter extends HTMLElement {
 }
 
 async function getHtmlContent(htmlFileName) {
-  console.log('getHtmlContent', `${absolutePath}/${htmlFileName}`);
   const responseHTML = await fetch(`${absolutePath}/${htmlFileName}`);
   if (!responseHTML.ok) {
     throw new Error(
