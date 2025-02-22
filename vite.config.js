@@ -24,7 +24,7 @@ export default defineConfig({
         },
         {
           src: 'src/assets/fonts',
-          dest: 'src/assets/',
+          dest: 'assets/',
         },
       ],
     }),

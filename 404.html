@@ -7,6 +7,17 @@
     </title>
 
     <link rel="stylesheet" href="style.css" />
+
+    <!-- fix routing on github pages : https://gist.github.com/leonsilicon/1278d429d7c915a9866bc6ea73453d9a -->
+    <script>
+      sessionStorage.redirect = location.href;
+      const projectPages = true; // If you're using the base .github.io domain without a path (i.e. <name>.github.io is your home page), set this to false
+      const l = window.location;
+      const repo = projectPages ? '/' + l.pathname.split('/')[1] : '';
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + repo
+      );
+    </script>
   </head>
   <body>
     <main role="main">

@@ -13,7 +13,17 @@
   </head>
   <body>
     <div id="app"></div>
-
     <script type="module" src="index.js" defer></script>
+    <script>
+      // Redirects user from 404
+      // fix from https://gist.github.com/leonsilicon/1278d429d7c915a9866bc6ea73453d9a
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
   </body>
 </html>
