@@ -354,6 +354,11 @@ fieldset {
     width: 20rem;
     height: 20rem;
     object-fit: cover;
+
+    @media screen and (max-width: 699px) {
+      width: 15rem;
+      height: 15rem;
+    }
   }
 
   .reseaux-sociaux {
