@@ -78,11 +78,12 @@
   --color: #fafafa;
   --color-primary: #89c4f4;
   --color-secondary: #f29292;
-  --color-red: #db2958;
+  --color-red: #ff3b3b;
 
   /*--color: #323232;
   --color-primary: #0000c8;
-  --color-secondary: #960000;*/
+  --color-secondary: #960000;
+  --color-red: #ff0000;*/
 }
 
 [data-selected-theme='light'] {
@@ -90,11 +91,13 @@
 
   /* --color: #c8c8c8;
   --color-primary: #00ff00;
-  --color-secondary: #ff0000;*/
+  --color-secondary: #ff0000;
+  --color-red:#FF0000;
+  */
   --color: #333329;
   --color-primary: #2653a6;
   --color-secondary: #d33b3b;
-  --color-red: #ee1b48;
+  --color-red: #e51811;
 }
 
 html {
@@ -114,9 +117,6 @@ body {
 
 * {
   outline: none;
-}
-
-main {
 }
 
 .content {
@@ -231,11 +231,13 @@ fieldset {
   }
 }
 
-.astuce {
+.astuce,
+.remarque {
   display: flex;
   flex-direction: row;
 
-  .light {
+  .light,
+  .danger {
     text-align: left;
     align-content: center;
     margin-right: 2em;
@@ -244,6 +246,11 @@ fieldset {
   .fa-lightbulb {
     font-size: 2em;
     color: var(--color-secondary);
+  }
+
+  .fa-triangle-exclamation {
+    font-size: 2em;
+    color: var(--color-red);
   }
 }
 
