@@ -20,10 +20,11 @@ jobs:
         run: |
           npm ci
           npm run build --if-present
-          npm install -g pa11y@8.x.x
+          npm run dev
 
       - name: Run pa11y
         run: |
+          npm install -g pa11y@8.x.x
           pa11y https://emma11y.github.io/tester-a11y/
           pa11y https://emma11y.github.io/tester-a11y/cas-pratique-1 
           pa11y https://emma11y.github.io/tester-a11y/cas-pratique-2 
