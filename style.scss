@@ -80,33 +80,21 @@
 [data-selected-theme='dark'] {
   --bg-color: #222;
 
-  /* --color: #323232;
+  --color: #323232;
   --color-primary: #0000c8;
   --color-secondary: #960000;
   --color-red: #ff0000;
-  --color-green: #00ff00;*/
-
-  --color: #fafafa;
-  --color-primary: #89c4f4;
-  --color-secondary: #f29292;
-  --color-red: #ff3b3b;
-  --color-green: #199e11;
+  --color-green: #00ff00;
 }
 
 [data-selected-theme='light'] {
   --bg-color: #fafafa;
 
-  /* --color: #c8c8c8;
+  --color: #c8c8c8;
   --color-primary: #00ff00;
   --color-secondary: #ff0000;
-  --color-red:#FF0000;
-   --color-green: #00ff00;
-  */
-  --color: #333329;
-  --color-primary: #2653a6;
-  --color-secondary: #d33b3b;
-  --color-red: #d33b3b;
-  --color-green: #1c8615;
+  --color-red: #ff0000;
+  --color-green: #00ff00;
 }
 
 html {
