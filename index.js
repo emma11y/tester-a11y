@@ -18,7 +18,7 @@ function loadComponents() {
 
 class CustomHeader extends HTMLElement {
   async connectedCallback() {
-    loadStylesheet('components/header/header.scss');
+    // loadStylesheet('components/header/header.scss');
     this.innerHTML = await getHtmlContent('components/header/header.html');
 
     this.initTheme();
@@ -70,7 +70,7 @@ class CustomHeader extends HTMLElement {
 
 class CustomFooter extends HTMLElement {
   async connectedCallback() {
-    loadStylesheet('components/footer/footer.scss');
+    // loadStylesheet('components/footer/footer.scss');
     this.innerHTML = await getHtmlContent('components/footer/footer.html');
   }
 }
