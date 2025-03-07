@@ -45,19 +45,19 @@
     width: 5em;
     font-size: 0.8em;
   }
-}
 
-.fa-circle-check {
-  display: none;
-}
+  .fa-circle-check {
+    display: none;
+  }
 
-[aria-pressed='true'] {
-  background-color: var(--color-primary);
-  color: var(--bg-color);
+  [aria-pressed='true'] {
+    background-color: var(--color-primary);
+    color: var(--bg-color);
 
-  /* .fa-circle-check {
-    display: block;
-  }*/
+    .fa-circle-check {
+      // display: block;
+    }
+  }
 }
 
 a {
