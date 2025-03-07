@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "install:chrome": "browser-driver-manager install chrome",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -12,12 +13,13 @@
   "devDependencies": {
     "sass-embedded": "^1.85.1",
     "vite": "^6.1.0",
-    "vite-plugin-static-copy": "^2.2.0",
-    "vite-plugin-full-reload": "^1.2.0"
+    "vite-plugin-full-reload": "^1.2.0",
+    "vite-plugin-static-copy": "^2.2.0"
   },
   "dependencies": {
     "@axe-core/cli": "^4.10.1",
     "@lhci/cli": "^0.14.0",
+    "browser-driver-manager": "^2.0.1",
     "pa11y": "^8.0.0"
   }
 }
