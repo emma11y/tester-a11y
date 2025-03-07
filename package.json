@@ -18,7 +18,6 @@
   "dependencies": {
     "@axe-core/cli": "^4.10.1",
     "@lhci/cli": "^0.14.0",
-    "browser-driver-manager": "^2.0.1",
     "pa11y": "^8.0.0"
   }
 }
