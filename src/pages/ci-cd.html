@@ -1,21 +1,91 @@
-<h2 lang="en">Continuous Integration/Continuous Delivery (CI/CD)</h2>
+<div>
+  <h2 lang="en">Continuous Integration/Continuous Delivery (CI/CD)</h2>
 
-<h3>Comment mettre en place un test automatisé avec Github Actions ?</h3>
-
-<a href="https://www.adrianbolonio.com/en/blog/accessibility-github-actions"
-  ><span lang="en"
-    >Automating the accessibility tests of your source code with GitHub
-    Actions</span
-  ></a
->
-
-<div class="remarque">
-  <div class="danger">
-    <i class="fa-solid fa-triangle-exclamation"></i>
-  </div>
-  <p>
-    Attention, les tests automatisés ne couvrent pas tous les critères
-    d'accessibilité. Le seul moyen de s'assurer que le site est accessible passe
-    par les tests utilisateurs.
+  <p class="font-bold">
+    Est-il possible de mettre en place des tests automatisés sur l'accessibilité
+    numérique ?
   </p>
+
+  <p>
+    Oui, c'est possible. Il existe des tests automatisés qu'on peut mettre en
+    place dans les CI/CD.
+  </p>
+
+  <div class="remarque">
+    <div class="danger">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+    </div>
+    <div>
+      <p>
+        Attention, les tests automatisés ne couvrent pas tous les critères
+        d'accessibilité. Le seul moyen de s'assurer que le site est accessible
+        passe par les tests utilisateurs.
+      </p>
+
+      <p>
+        Les tests automatisés ne peuvent pas vérifier si c'est la bonne langue,
+        si les textes alternatifs des images sont pertinents, si les labels des
+        boutons et liens sont pertinents et si les éléments recoivent
+        correctement le focus du clavier.
+      </p>
+    </div>
+  </div>
+
+  <h3>Comment mettre en place un test automatisé avec Github Actions ?</h3>
+
+  <p>
+    Sur ce site, j'utilise Axe et Pa11y qui se basent sur les normes
+    internationales d'accessibilité WCAG.
+  </p>
+
+  <ul>
+    <li>
+      En créant un fichier <code>yml</code> qui analysera mon code sur GitHub
+      Actions
+    </li>
+    <li>
+      Ou en ligne de commande en local :
+      <ul>
+        <li><code>axe http://localhost:5173/tester-a11y/ </code></li>
+        <li><code>pa11y http://localhost:5173/tester-a11y/</code></li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>
+    Source :
+    <a href="https://www.adrianbolonio.com/en/blog/accessibility-github-actions"
+      ><span lang="en"
+        >Automating the accessibility tests of your source code with GitHub
+        Actions</span
+      >
+    </a>
+  </p>
+  <h3>Autres CI/CD</h3>
+  <ul>
+    <li>
+      <a href="https://accesslint.com/"><span lang="en">AccessLint</span></a
+      >, une application GitHub qui trouve des erreurs d'accessibilité sur les
+      <span lang="en">pull requests</span>
+    </li>
+    <li>
+      <a href="https://github.com/marketplace/axe-linter"
+        ><span lang="en">Axe Linter</span></a
+      >
+      qui trouve aussi des erreurs d'accessibilité sur les
+      <span lang="en">pull requests</span> sur GitHub
+    </li>
+    <li>
+      <a href="https://github.com/microsoft/accessibility-insights-action"
+        ><span lang="en">Accessibility Insights Azure DevOps (ADO)</span></a
+      >
+      pour mettre en place des tests automatisés sur Azure Devops
+    </li>
+    <li>
+      <a href="https://docs.gitlab.com/ci/testing/accessibility_testing/"
+        ><span lang="en">Accessibility testing on GitLab with Pa11y</span></a
+      >
+      pour mettre en place des tests automatisés sur GitLab
+    </li>
+  </ul>
 </div>

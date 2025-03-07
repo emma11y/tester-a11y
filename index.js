@@ -2,22 +2,14 @@ const absolutePath = '/tester-a11y';
 const titlePage = `Comment tester l'accessibilité d'un site internet ?`;
 
 window.onload = () => {
-  document.querySelector('#app').innerHTML = `
-    <main role="main">
-      <custom-header></custom-header>
-
-      <div class="content">
-        <app-router></app-router>
-      </div>
-
-      <custom-footer></custom-footer>
-    </main>`;
-
-  loadComponents();
+  getHtmlContent('components/main/main.html').then((innerHTML) => {
+    document.querySelector('#app').innerHTML = innerHTML;
+    loadComponents();
+  });
 };
 
 function loadComponents() {
-  customElements.define('app-router', AppRouter);
+  customElements.define('router-outlet', RouterOutlet);
   customElements.define('router-link', RouterLink);
   customElements.define('custom-header', CustomHeader);
   customElements.define('custom-footer', CustomFooter);
@@ -26,7 +18,7 @@ function loadComponents() {
 
 class CustomHeader extends HTMLElement {
   async connectedCallback() {
-    loadStylesheet('components/header/header.css');
+    loadStylesheet('components/header/header.scss');
     this.innerHTML = await getHtmlContent('components/header/header.html');
 
     this.initTheme();
@@ -76,7 +68,12 @@ class CustomHeader extends HTMLElement {
   }
 }
 
-class CustomFooter extends HTMLElement {}
+class CustomFooter extends HTMLElement {
+  async connectedCallback() {
+    loadStylesheet('components/footer/footer.scss');
+    this.innerHTML = await getHtmlContent('components/footer/footer.html');
+  }
+}
 
 class CustomPicture extends HTMLElement {
   constructor() {
@@ -103,7 +100,7 @@ class CustomPicture extends HTMLElement {
   }
 }
 
-class AppRouter extends HTMLElement {
+class RouterOutlet extends HTMLElement {
   constructor() {
     super();
     window.addEventListener('popstate', () => this.handleRoute());
@@ -114,9 +111,7 @@ class AppRouter extends HTMLElement {
   }
 
   async handleRoute() {
-    const path = window.location.pathname
-      .replace('tester-a11y', '')
-      .replace('//', '/');
+    const path = window.location.pathname.replace(absolutePath, '');
 
     let title = '';
     let filename = '';
@@ -157,6 +152,10 @@ class AppRouter extends HTMLElement {
         filename = 'pages/bonus.html';
         title = 'Bonus';
         break;
+      case '/faq':
+        filename = 'pages/faq.html';
+        title = 'Foire aux questions';
+        break;
       case '/ressources':
         filename = 'pages/ressources.html';
         title = 'Ressources';
@@ -172,11 +171,69 @@ class AppRouter extends HTMLElement {
 
     this.innerHTML = await getHtmlContent(filename);
     document.title = `${title} - ${titlePage}`;
+
+    this.initJavascript(path);
+    this.setCurrentPage(document.title);
+  }
+
+  setCurrentPage(title) {
+    document.getElementById('title-page').innerHTML = title;
   }
 
   async navigate(path) {
     window.history.pushState({}, '', path);
     await this.handleRoute();
+  }
+
+  initJavascript(path) {
+    if (path === '/cas-pratique-3') {
+      document
+        .getElementById('show-button')
+        .addEventListener('click', (event) => {
+          displayPicture('.images');
+
+          const element = event.target;
+
+          const hasHidden = document.querySelector('.hidden') !== null;
+
+          if (hasHidden) {
+            element.innerText = 'Afficher les images';
+          } else {
+            element.innerText = 'Cacher les images';
+          }
+        });
+    }
+
+    if (path === '/cas-pratique-4') {
+      document.getElementById('btnSubmit').addEventListener('click', () => {
+        const inputs = document.querySelectorAll(['input', 'textarea']);
+
+        let hasSomeInputInvalid = false;
+
+        for (const input of inputs) {
+          const hasValid = input.value !== '';
+
+          if (hasValid) {
+            if (!input.classList.contains('valid')) {
+              input.classList.add('valid');
+            }
+
+            input.classList.remove('invalid');
+          } else {
+            hasSomeInputInvalid = true;
+            if (!input.classList.contains('invalid')) {
+              input.classList.add('invalid');
+            }
+
+            input.classList.remove('valid');
+          }
+        }
+
+        if (!hasSomeInputInvalid) {
+          setTimeout(() => alert('Bravo, tous vos champs sont remplis !'), 100);
+        }
+      });
+    }
   }
 }
 
@@ -206,14 +263,9 @@ function setAriaCurrentPage() {
   routerLinks.forEach((routerLink) => {
     let link = routerLink.querySelector('a');
 
-    const path = window.location.pathname
-      .replace('tester-a11y', '')
-      .replace('//', '/');
+    const path = window.location.pathname.replace(absolutePath, '');
 
-    if (
-      path === routerLink.attributes.href.value ||
-      (path === '/' && routerLink.attributes.title.value === 'Accueil')
-    ) {
+    if (path === routerLink.attributes.href.value) {
       link.setAttribute('aria-current', 'page');
       link.classList.add('active');
     } else {
@@ -241,9 +293,20 @@ class RouterLink extends HTMLElement {
     link.text = this.attributes.title.value;
     link.onclick = (event) => {
       event.preventDefault();
-      document.querySelector('app-router').navigate(href);
+      document.querySelector('router-outlet').navigate(href);
     };
 
     this.appendChild(link);
+  }
+}
+
+function displayPicture(selector) {
+  const element = document.querySelector(selector);
+  if (element) {
+    if (element.classList.contains('hidden')) {
+      element.classList.remove('hidden');
+    } else {
+      element.classList.add('hidden');
+    }
   }
 }

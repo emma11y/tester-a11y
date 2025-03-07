@@ -1,16 +1,17 @@
 /* Webfont: Luciole-Regular */
 @font-face {
   font-family: 'Luciole';
-  src: url('./fonts/Luciole/Luciole-Regular/Luciole-Regular.eot'); /* IE9 Compat Modes */
-  src: url('./fonts/Luciole/Luciole-Regular/Luciole-Regular.eot?#iefix')
+  src: url('./src/assets/fonts/Luciole/Luciole-Regular/Luciole-Regular.eot'); /* IE9 Compat Modes */
+  src: url('./src/assets/fonts/Luciole/Luciole-Regular/Luciole-Regular.eot?#iefix')
       format('embedded-opentype'),
-    /* IE6-IE8 */ url('./fonts/Luciole/Luciole-Regular/Luciole-Regular.woff')
+    /* IE6-IE8 */
+      url('./src/assets/fonts/Luciole/Luciole-Regular/Luciole-Regular.woff')
       format('woff'),
     /* Modern Browsers */
-      url('./fonts/Luciole/Luciole-Regular/Luciole-Regular.ttf')
+      url('./src/assets/fonts/Luciole/Luciole-Regular/Luciole-Regular.ttf')
       format('truetype'),
     /* Safari, Android, iOS */
-      url('./fonts/Luciole/Luciole-Regular/Luciole-Regular.svg#Luciole-Regular')
+      url('./src/assets/fonts/Luciole/Luciole-Regular/Luciole-Regular.svg#Luciole-Regular')
       format('svg'); /* Legacy iOS */
   font-style: normal;
   font-weight: normal;
@@ -18,15 +19,17 @@
 
 @font-face {
   font-family: 'Luciole';
-  src: url('./fonts/Luciole/Luciole-Bold/Luciole-Bold.eot'); /* IE9 Compat Modes */
-  src: url('./fonts/Luciole/Luciole-Bold/Luciole-Bold.eot?#iefix')
+  src: url('./src/assets/fonts/Luciole/Luciole-Bold/Luciole-Bold.eot'); /* IE9 Compat Modes */
+  src: url('./src/assets/fonts/Luciole/Luciole-Bold/Luciole-Bold.eot?#iefix')
       format('embedded-opentype'),
-    /* IE6-IE8 */ url('./fonts/Luciole/Luciole-Bold/Luciole-Bold.woff')
+    /* IE6-IE8 */
+      url('./src/assets/fonts/Luciole/Luciole-Bold/Luciole-Bold.woff')
       format('woff'),
-    /* Modern Browsers */ url('./fonts/Luciole/Luciole-Bold/Luciole-Bold.ttf')
+    /* Modern Browsers */
+      url('./src/assets/fonts/Luciole/Luciole-Bold/Luciole-Bold.ttf')
       format('truetype'),
     /* Safari, Android, iOS */
-      url('./fonts/Luciole/Luciole-Bold/Luciole-Bold.svg#Luciole-Bold')
+      url('./src/assets/fonts/Luciole/Luciole-Bold/Luciole-Bold.svg#Luciole-Bold')
       format('svg'); /* Legacy iOS */
   font-style: normal;
   font-weight: 700;
@@ -34,16 +37,17 @@
 
 @font-face {
   font-family: 'Luciole';
-  src: url('./fonts/Luciole/Luciole-Italic/Luciole-Italic.eot'); /* IE9 Compat Modes */
-  src: url('./fonts/Luciole/Luciole-Italic/Luciole-Italic.eot?#iefix')
+  src: url('./src/assets/fonts/Luciole/Luciole-Italic/Luciole-Italic.eot'); /* IE9 Compat Modes */
+  src: url('./src/assets/fonts/Luciole/Luciole-Italic/Luciole-Italic.eot?#iefix')
       format('embedded-opentype'),
-    /* IE6-IE8 */ url('./fonts/Luciole/Luciole-Italic/Luciole-Italic.woff')
+    /* IE6-IE8 */
+      url('./src/assets/fonts/Luciole/Luciole-Italic/Luciole-Italic.woff')
       format('woff'),
     /* Modern Browsers */
-      url('./fonts/Luciole/Luciole-Italic/Luciole-Italic.ttf')
+      url('./src/assets/fonts/Luciole/Luciole-Italic/Luciole-Italic.ttf')
       format('truetype'),
     /* Safari, Android, iOS */
-      url('./fonts/Luciole/Luciole-Italic/Luciole-Italic.svg#Luciole-Italic')
+      url('./src/assets/fonts/Luciole/Luciole-Italic/Luciole-Italic.svg#Luciole-Italic')
       format('svg'); /* Legacy iOS */
   font-style: italic;
   font-weight: normal;
@@ -51,17 +55,17 @@
 
 @font-face {
   font-family: 'Luciole';
-  src: url('./fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.eot'); /* IE9 Compat Modes */
-  src: url('./fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.eot?#iefix')
+  src: url('./src/assets/fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.eot'); /* IE9 Compat Modes */
+  src: url('./src/assets/fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.eot?#iefix')
       format('embedded-opentype'),
     /* IE6-IE8 */
-      url('./fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.woff')
+      url('./src/assets/fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.woff')
       format('woff'),
     /* Modern Browsers */
-      url('./fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.ttf')
+      url('./src/assets/fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.ttf')
       format('truetype'),
     /* Safari, Android, iOS */
-      url('./fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.svg#Luciole-BoldItalic')
+      url('./src/assets/fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.svg#Luciole-BoldItalic')
       format('svg'); /* Legacy iOS */
   font-style: italic;
   font-weight: 700;
@@ -75,15 +79,18 @@
 :root,
 [data-selected-theme='dark'] {
   --bg-color: #222;
+
+  /* --color: #323232;
+  --color-primary: #0000c8;
+  --color-secondary: #960000;
+  --color-red: #ff0000;
+  --color-green: #00ff00;*/
+
   --color: #fafafa;
   --color-primary: #89c4f4;
   --color-secondary: #f29292;
   --color-red: #ff3b3b;
-
-  /*--color: #323232;
-  --color-primary: #0000c8;
-  --color-secondary: #960000;
-  --color-red: #ff0000;*/
+  --color-green: #199e11;
 }
 
 [data-selected-theme='light'] {
@@ -93,11 +100,13 @@
   --color-primary: #00ff00;
   --color-secondary: #ff0000;
   --color-red:#FF0000;
+   --color-green: #00ff00;
   */
   --color: #333329;
   --color-primary: #2653a6;
   --color-secondary: #d33b3b;
-  --color-red: #e51811;
+  --color-red: #d33b3b;
+  --color-green: #1c8615;
 }
 
 html {
@@ -119,12 +128,25 @@ body {
   outline: none;
 }
 
+#app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+
+  /* fallback height */
+  min-height: 100vh;
+
+  /* new small viewport height for modern browsers */
+  min-height: 100svh;
+}
+
 .content {
   max-width: 1200px;
   margin: auto;
+  margin-bottom: 5em;
 
   @media screen and (max-width: 1200px) {
-    margin: 1em;
+    padding: 0 1em;
   }
 }
 
@@ -141,22 +163,15 @@ body {
   white-space: nowrap !important;
 }
 
-h1,
-h2 {
-  color: var(--color-primary);
-}
-
 h1 {
   font-size: 2.5em;
+  color: var(--color);
 }
 
 h2 {
   font-size: 2em;
   text-align: center;
-}
-
-.font-bold {
-  font-weight: bold;
+  color: var(--color-primary);
 }
 
 .question {
@@ -197,7 +212,7 @@ button {
   font-family: var(--main-family);
   font-size: 1em;
 
-  &:focus-visible,
+  //&:focus-visible,
   &:hover {
     color: var(--bg-color);
     background-color: var(--color-primary);
@@ -210,13 +225,39 @@ a {
   text-decoration: underline;
   cursor: pointer;
 
-  /*&:focus-visible,*/
+  //&:focus-visible,
   &:hover {
     text-decoration-thickness: 0.2em;
     text-decoration-line: underline;
     text-decoration-style: unset;
     text-underline-offset: 0.5em;
     text-decoration-color: var(--color-primary);
+  }
+}
+
+li {
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+}
+
+.text {
+  &-center {
+    text-align: center;
+  }
+}
+
+.font {
+  &-bold {
+    font-weight: bold;
+  }
+}
+
+.mt {
+  &-2 {
+    margin-top: 2em;
+  }
+  &-3 {
+    margin-top: 3em;
   }
 }
 
@@ -254,14 +295,71 @@ fieldset {
   }
 }
 
+.cas-pratique-3 {
+  .images {
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width: 699px) {
+      flex-direction: column;
+    }
+
+    &.hidden {
+      left: -9999px;
+      position: absolute;
+    }
+
+    .image {
+      margin: auto;
+      width: 50%;
+      flex: 50%;
+      padding: 1em;
+
+      @media screen and (max-width: 699px) {
+        width: 90%;
+        flex: 90%;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .actions {
+    button {
+      width: 15em;
+      margin: 1em auto;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
+
 .cas-pratique-4 {
   .form {
+    margin-top: 5em;
     display: flex;
     margin-bottom: 2em;
     justify-content: center;
 
     label {
       margin-bottom: 0.5em;
+    }
+
+    textarea,
+    input {
+      border: 0.1em solid var(--color);
+
+      &.valid {
+        border: 0.25em solid var(--color-green);
+      }
+
+      &.invalid {
+        border: 0.25em solid var(--color-red);
+      }
     }
   }
 
@@ -322,10 +420,24 @@ fieldset {
       width: 33%;
       flex: 33%;
 
-      @media screen and (max-width: 699px) {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      @media screen and (max-width: 1199px) {
         width: 100%;
         flex: 100%;
         margin-bottom: 2em;
+      }
+
+      &-body {
+        padding: 1em;
+      }
+
+      &-footer {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
       }
 
       a {
@@ -334,8 +446,8 @@ fieldset {
         border-radius: 0.5em;
         padding: 1em;
 
-        &:hover,
-        &:focus-visible {
+        //&:focus-visible,
+        &:hover {
           background-color: var(--color-primary);
           color: var(--bg-color);
         }
@@ -427,5 +539,12 @@ fieldset {
       width: 9em;
       padding-left: 1em;
     }
+  }
+}
+
+.faq {
+  &-reponse {
+    border: 0.1em solid var(--color);
+    padding: 2em;
   }
 }

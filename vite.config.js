@@ -1,9 +1,21 @@
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
+import FullReload from 'vite-plugin-full-reload';
 
 export default defineConfig({
   base: '/tester-a11y/', // Remplace par le nom de ton repo GitHub
   plugins: [
+    FullReload(
+      [
+        'src/pages/**',
+        'src/components/**',
+        'style.scss',
+        'index.js',
+        'index.html',
+        '404.html',
+      ],
+      { delay: 100 }
+    ),
     viteStaticCopy({
       targets: [
         {
@@ -24,9 +36,10 @@ export default defineConfig({
         },
         {
           src: 'src/assets/fonts',
-          dest: 'assets/',
+          dest: 'src/assets/',
         },
       ],
     }),
+    ,
   ],
 });
