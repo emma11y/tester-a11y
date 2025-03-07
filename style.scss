@@ -202,6 +202,7 @@ code {
   padding: 0 0.25em;
 }
 
+a.button,
 button {
   background-color: var(--bg-color);
   border: 0.1rem solid var(--color-primary);
@@ -235,6 +236,16 @@ a {
     text-decoration-style: unset;
     text-underline-offset: 0.5em;
     text-decoration-color: var(--color-primary);
+  }
+}
+
+a.button {
+  width: 2em;
+  text-decoration: none;
+  border: none;
+
+  i {
+    font-size: 1.5em;
   }
 }
 
