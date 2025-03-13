@@ -30,4 +30,14 @@
       width: 5vw;
     }
   }
+
+  a.button {
+    width: 2em;
+    text-decoration: none;
+    border: none;
+
+    i {
+      font-size: 1.5em;
+    }
+  }
 }

@@ -218,6 +218,7 @@ class RouterOutlet extends HTMLElement {
               input.classList.add('valid');
             }
 
+            input.ariaInvalid = false;
             input.classList.remove('invalid');
           } else {
             hasSomeInputInvalid = true;
@@ -225,12 +226,37 @@ class RouterOutlet extends HTMLElement {
               input.classList.add('invalid');
             }
 
+            input.ariaInvalid = true;
             input.classList.remove('valid');
           }
+
+          // Ne pas afficher l'information uniquement par la couleur
+          /* let icon = input.parentElement.querySelector('i');
+          if (!icon) {
+            icon = document.createElement('i');
+            icon.ariaHidden = true;
+
+            input.parentElement.appendChild(icon);
+          }
+
+          icon.className = hasValid
+            ? 'fa-solid fa-circle-check'
+            : 'fa-solid fa-circle-xmark';*/
+
+          // Afficher les messages d'erreur
+          /*const group = input.parentElement.parentElement;
+          const label = group.querySelector('label');
+
+          const error = group.querySelector('.error');
+          error.innerText = !hasValid
+            ? `Le champ ${label.innerText} doit être renseigné`
+            : '';*/
         }
 
-        if (!hasSomeInputInvalid) {
-          setTimeout(() => alert('Bravo, tous vos champs sont remplis !'), 100);
+        if (hasSomeInputInvalid) {
+          alert('Vos champs ne sont pas remplis !');
+        } else {
+          alert('Bravo, tous vos champs sont remplis !');
         }
       });
     }

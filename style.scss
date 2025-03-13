@@ -83,34 +83,37 @@
 [data-selected-theme='dark'] {
   --bg-color: #222;
 
-  --color: #323232;
-  --color-primary: #0000c8;
-  --color-secondary: #960000;
-  --color-red: #ff0000;
-  --color-green: #00ff00;
+  :has([class*='cas-pratique']) {
+    --color: #323232;
+    --color-primary: #0000c8;
+    --color-secondary: #960000;
+    --color-red: #ff0000;
+    --color-green: #00ff00;
+  }
 
-  /*
   --color: #fafafa;
   --color-primary: #89c4f4;
   --color-secondary: #f29292;
   --color-red: #ff3b3b;
-  --color-green: #199e11;*/
+  --color-green: #199e11;
 }
 
 [data-selected-theme='light'] {
   --bg-color: #fafafa;
 
-  --color: #c8c8c8;
-  --color-primary: #00ff00;
-  --color-secondary: #ff0000;
-  --color-red: #ff0000;
-  --color-green: #00ff00;
+  :has([class*='cas-pratique']) {
+    --color: #c8c8c8;
+    --color-primary: #00ff00;
+    --color-secondary: #ff0000;
+    --color-red: #ff0000;
+    --color-green: #00ff00;
+  }
 
-  /*--color: #333329;
+  --color: #333329;
   --color-primary: #2653a6;
   --color-secondary: #d33b3b;
   --color-red: #d33b3b;
-  --color-green: #1c8615;*/
+  --color-green: #1c8615;
 }
 
 html {
@@ -225,6 +228,10 @@ button {
   }
 }
 
+a.button {
+  text-decoration: none;
+}
+
 a {
   color: var(--color-primary);
   text-decoration: underline;
@@ -237,16 +244,6 @@ a {
     text-decoration-style: unset;
     text-underline-offset: 0.5em;
     text-decoration-color: var(--color-primary);
-  }
-}
-
-a.button {
-  width: 2em;
-  text-decoration: none;
-  border: none;
-
-  i {
-    font-size: 1.5em;
   }
 }
 
@@ -307,6 +304,10 @@ fieldset {
   .fa-triangle-exclamation {
     font-size: 2em;
     color: var(--color-red);
+  }
+
+  li {
+    margin: 0;
   }
 }
 
@@ -383,10 +384,46 @@ fieldset {
     flex-direction: column;
     margin-bottom: 1em;
 
+    &-input {
+      display: flex;
+
+      &:has(.valid) {
+        i {
+          color: var(--color-green);
+        }
+      }
+
+      &:has(.invalid) {
+        i {
+          color: var(--color-red);
+        }
+      }
+
+      i {
+        margin: auto;
+        padding-left: 1em;
+      }
+    }
+
     input,
     textarea {
+      width: 100%;
       max-width: 40em;
       padding: 0.5em;
+    }
+
+    .error {
+      display: none;
+      font-size: 0.8em;
+      margin: 0;
+      padding-top: 0.5em;
+      color: var(--color-red);
+    }
+
+    &:has(.invalid) {
+      .error {
+        display: block;
+      }
     }
   }
 }
