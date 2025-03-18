@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.13.10",
     "sass-embedded": "^1.85.1",
     "vite": "^6.1.0",
     "vite-plugin-full-reload": "^1.2.0",
