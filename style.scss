@@ -181,6 +181,12 @@ h2 {
   color: var(--color-primary);
 }
 
+h3,
+h4,
+h6 {
+  color: var(--color);
+}
+
 .question {
   font-size: 1.8;
   border: 0.1em solid var(--color);
@@ -193,6 +199,7 @@ h2 {
 p,
 li {
   line-height: 1.5;
+  color: var(--color);
 }
 
 ul {
@@ -281,6 +288,7 @@ fieldset {
 
   legend {
     margin-bottom: 2em;
+    color: var(--color);
   }
 }
 
@@ -363,6 +371,7 @@ fieldset {
 
     label {
       margin-bottom: 0.5em;
+      color: var(--color);
     }
 
     textarea,
