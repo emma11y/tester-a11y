@@ -254,7 +254,7 @@ class RouterOutlet extends HTMLElement {
         }
 
         if (hasSomeInputInvalid) {
-          alert('Vos champs ne sont pas remplis !');
+          alert('Vos champs ne sont pas tous remplis !');
         } else {
           alert('Bravo, tous vos champs sont remplis !');
         }

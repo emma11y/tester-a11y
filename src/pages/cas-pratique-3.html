@@ -6,9 +6,7 @@
   </div>
 
   <div class="actions">
-    <button type="button" id="show-button">
-      <p>Afficher les images</p>
-    </button>
+    <button type="button" id="show-button">Afficher les images</button>
 
     <span class="sr-only"
       >Ce bouton permet d'afficher les images afin que les personnes qui testent
@@ -23,6 +21,7 @@
         id="image-1"
         alt="visuel_academie_de_paris-14-11.png"
         src="src/assets/img/visuel_academie_de_paris-14-11.png"
+        loading="lazy"
       />
 
       <!-- Communiqué de l'académie de Paris datant du samedi 14 novembre : Un point de situation sur l'ouverture des établissements scolaires et universitaires lundi, en ïle de France, sera communiqué ce Samedi en fin de journée -->
@@ -32,9 +31,28 @@
         id="image-2"
         alt="Dessin d'Allan Barte"
         src="src/assets/img/allan_barte.jpg"
+        loading="lazy"
       />
 
       <!-- Dessin d'Allan Barte titré Budget 2025 et motion de censure. On y voit deux personnes caricaturés : Macron et son nez long comme Pinocchio et son Premier Ministre avec de grosses lunettes. Le Premier Ministre a les bras écartes protégeant Macron, accroupi les mains sur sa tempe, face à une floppée de flêches Motion de censure. Macron tout ému dit Oh ! Olivier avec des coeurs dessinées au dessus de lui. Le dessin est sous-titré Le PS a décidé de sauver le gouvernement macroniste. -->
+    </div>
+  </div>
+
+  <div class="astuce">
+    <div class="light">
+      <i class="fa-regular fa-lightbulb" aria-hidden="true"></i>
+    </div>
+    <div class="astuce-content">
+      <ul>
+        <li>
+          Si l'image est purement décorative, laissez l'attribut alt
+          <span class="font-bold">vide</span>.
+        </li>
+        <li>
+          En renseignant une alternative textuelle, vous permettez le
+          référencement (SEO) de vos images.
+        </li>
+      </ul>
     </div>
   </div>
 </div>
