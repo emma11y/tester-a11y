@@ -1,12 +1,12 @@
-# Comment tester l'accessibilité d'un site internet ?
+# Démo a11y
 
 Ce site non accessible a été conçu pour les conférences en live-coding.
 
-## Abstract
+## Rappel
 
 Selon [l'Observatoire du respect des obligations d'accessibilité](https://observatoire-access-num.aveuglesdefrance.org/), seulement moins de 5% des sites web sont accessibles pour les personnes handicapées.
-Dans cette conférence, nous explorons les six erreurs d'accessibilité les plus courantes sur un site web. Afin de les corriger, je vous présenterai des conseils simples à mettre en pratique en HTML et un peu de CSS.
-Je vous expliquerai aussi comment effectuer un test avec un lecteur d'écran et le clavier afin de vérifier si sa page web est accessible.
+
+Selon le rapport [WebAIM](https://webaim.org/projects/million/) (EN), il y a six erreurs d'accessibilité les plus courantes sur un site web. C'est pourquoi vous trouverez ces six cas pratiques sur ce site. Ils sont faciles à mettre en oeuvre que vous débutez ou non dans l'accessibilité numérique.
 
 [Accéder au site non accessible](https://emma11y.github.io/tester-a11y/)
 

@@ -1,5 +1,5 @@
 const absolutePath = '/tester-a11y';
-const titlePage = `Comment tester l'accessibilité d'un site internet ?`;
+const titlePage = `Démo a11y`;
 
 window.onload = () => {
   getHtmlContent('components/main/main.html').then((innerHTML) => {
