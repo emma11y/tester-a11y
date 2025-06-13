@@ -231,7 +231,7 @@ class RouterOutlet extends HTMLElement {
           }
 
           // Ne pas afficher l'information uniquement par la couleur
-          /* let icon = input.parentElement.querySelector('i');
+          /*  let icon = input.parentElement.querySelector('i');
           if (!icon) {
             icon = document.createElement('i');
             icon.ariaHidden = true;
@@ -241,16 +241,18 @@ class RouterOutlet extends HTMLElement {
 
           icon.className = hasValid
             ? 'fa-solid fa-circle-check'
-            : 'fa-solid fa-circle-xmark';*/
+            : 'fa-solid fa-circle-xmark';
 
           // Afficher les messages d'erreur
-          /*const group = input.parentElement.parentElement;
+          const group = input.parentElement.parentElement;
           const label = group.querySelector('label');
 
           const error = group.querySelector('.error');
           error.innerText = !hasValid
             ? `Le champ ${label.innerText} doit être renseigné`
-            : '';*/
+            : '';
+
+          input.setAttribute('aria-describedby', error.id);*/
         }
 
         if (hasSomeInputInvalid) {
