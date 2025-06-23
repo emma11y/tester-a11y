@@ -1,4 +1,4 @@
-# Démo a11y
+# Démo accessibilité numérique
 
 Ce site non accessible a été conçu pour les conférences en live-coding.
 

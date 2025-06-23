@@ -1,5 +1,5 @@
 const absolutePath = '/tester-a11y';
-const titlePage = `Démo a11y`;
+const titlePage = `Démo accessibilité numérique`;
 
 window.onload = () => {
   getHtmlContent('components/main/main.html').then((innerHTML) => {
