@@ -150,9 +150,9 @@ body {
   margin: auto;
   margin-bottom: 5em;
 
-  @media screen and (max-width: 1200px) {
-    padding: 0 1em;
-  }
+  // @media screen and (max-width: 1200px) {
+  padding: 0 2em;
+  // }
 }
 
 .sr-only {
@@ -609,5 +609,37 @@ fieldset {
   &-reponse {
     border: 0.1em solid var(--color);
     padding: 2em;
+  }
+}
+
+.thanks {
+  margin: auto;
+  text-align: center;
+
+  p:first-child {
+    font-size: 180%;
+  }
+
+  .qr-codes {
+    display: flex;
+    flex-direction: row;
+    margin: auto 1em;
+    justify-content: center;
+
+    @media screen and (max-width: 659px) {
+      flex-flow: wrap;
+    }
+
+    div {
+      margin: 0 1em;
+
+      img {
+        width: 15vw;
+
+        @media screen and (max-width: 659px) {
+          width: 100%;
+        }
+      }
+    }
   }
 }
