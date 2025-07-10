@@ -14,6 +14,7 @@ function loadComponents() {
   customElements.define('custom-header', CustomHeader);
   customElements.define('custom-footer', CustomFooter);
   customElements.define('custom-picture', CustomPicture);
+  customElements.define('custom-alert', CustomAlert);
 }
 
 class CustomHeader extends HTMLElement {
@@ -256,9 +257,15 @@ class RouterOutlet extends HTMLElement {
         }
 
         if (hasSomeInputInvalid) {
-          alert('Vos champs ne sont pas tous remplis !');
+          displayAlert('error', 'Vos champs ne sont pas tous remplis !');
+
+          // donner le focus au premier champ invalid
+          const element = document.querySelector('[aria-invalid=true]');
+          if (element) {
+            element.focus();
+          }
         } else {
-          alert('Bravo, tous vos champs sont remplis !');
+          displayAlert('success', 'Bravo, tous vos champs sont remplis !');
         }
       });
     }
@@ -336,5 +343,86 @@ function displayPicture(selector) {
     } else {
       element.classList.add('hidden');
     }
+  }
+}
+
+class CustomAlert extends HTMLElement {
+  async connectedCallback() {
+    loadStylesheet('components/alert/alert.scss');
+    this.innerHTML = await getHtmlContent('components/alert/alert.html');
+  }
+}
+
+function displayAlert(type, message) {
+  let iconClassName = '';
+  let className = '';
+
+  switch (type) {
+    case 'info':
+      iconClassName = 'fa-circle-info';
+      className = 'info';
+      break;
+    case 'success':
+      iconClassName = 'fa-circle-check';
+      className = 'success';
+      break;
+    case 'error':
+      iconClassName = 'fa-circle-exclamation';
+      className = 'error';
+      break;
+    default:
+      return;
+  }
+
+  const alertElement = document.querySelector('.alert');
+  if (!alertElement) {
+    throw new Error("Le composant alert n'est pas défini");
+  }
+
+  alertElement.classList.add('display');
+  alertElement.classList.add(className);
+
+  const iconElement = alertElement.querySelector('i');
+  if (iconElement) {
+    iconElement.classList.add(iconClassName);
+  }
+
+  const alertMessageElement = alertElement.querySelector('.alert-title');
+  if (alertMessageElement) {
+    alertMessageElement.innerText = message;
+  }
+
+  const buttonElement = alertElement.querySelector('button');
+  if (buttonElement) {
+    buttonElement.addEventListener('click', () =>
+      hideAlert(className, iconClassName)
+    );
+  }
+
+  setTimeout(() => hideAlert(className, iconClassName), 1500);
+}
+
+function hideAlert(className, iconClassName) {
+  const alertElement = document.querySelector('.alert');
+  if (!alertElement) {
+    throw new Error("Le composant alert n'est pas défini");
+  }
+
+  alertElement.classList.remove('display');
+  alertElement.classList.remove(className);
+
+  const iconElement = alertElement.querySelector('i');
+  if (iconElement) {
+    iconElement.classList.remove(iconClassName);
+  }
+
+  const alertMessageElement = alertElement.querySelector('.alert-title');
+  if (alertMessageElement) {
+    alertMessageElement.innerText = '';
+  }
+
+  const buttonElement = alertElement.querySelector('button');
+  if (buttonElement) {
+    buttonElement.removeEventListener('click', buttonElement);
   }
 }

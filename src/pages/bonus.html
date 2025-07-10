@@ -27,15 +27,19 @@
 
 <ul>
   <li>
+    L'attribut <code>role</code> permet d'attribuer un rôle sur l'élément, en
+    l'occurence les rôles <code>main</code>, <code>banner</code>,
+    <code>nav</code>, <code>contentinfo</code>, <code>form</code> et
+    <code>alert</code> pour annoncer respectivement le main, l'en-tête, la
+    navigation, le pied de page, le formulaire et l'alerte.
+  </li>
+  <li>
     L'attribut <code>aria-current</code> permet de vocaliser la page courante.
     Vous pouvez voir que sur la balise <code>a</code>, en plus de la classe
     <code>.active</code>, il y a <code>aria-current</code>. La classe n'est pas
     vocalisable, mais l'attribut oui.
   </li>
-  <li>
-    L'attribut <code>aria-live</code> permet de vocaliser l'information à partir
-    du moment où l'élément a changé de valeur.
-  </li>
+
   <li>
     L'attribut <code>aria-hidden</code> permet de cacher l'élément aux lecteurs
     d'écran car les icônes ne sont pas restitués correctement. Pour compléter

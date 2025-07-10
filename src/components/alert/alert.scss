@@ -1,0 +1,96 @@
+.alert {
+  display: none;
+
+  flex-direction: row;
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  z-index: 9999;
+  border: 0.1em solid;
+  background: var(--bg-color);
+
+  &.display {
+    display: flex;
+  }
+
+  &.info {
+    color: var(--color-primary);
+
+    i {
+      color: var(--color-primary);
+    }
+
+    button {
+      &:hover,
+      &:focus-visible {
+        background-color: var(--color-primary);
+        i {
+          color: var(--bg-color);
+        }
+      }
+    }
+  }
+
+  &.success {
+    color: var(--color-green);
+
+    i {
+      color: var(--color-green);
+    }
+
+    button {
+      &:hover,
+      &:focus-visible {
+        background-color: var(--color-green);
+        i {
+          color: var(--bg-color);
+        }
+      }
+    }
+  }
+
+  &.error {
+    color: var(--color-red);
+
+    i {
+      color: var(--color-red);
+    }
+
+    button {
+      &:hover,
+      &:focus-visible {
+        background-color: var(--color-red);
+        i {
+          color: var(--bg-color);
+        }
+      }
+    }
+  }
+
+  i {
+    margin: auto;
+    padding: 1em;
+    font-size: 1.5em;
+  }
+
+  .alert-title {
+    margin: auto;
+    padding: 0.5em;
+    text-align: left;
+    width: 15em;
+    color: var(--color);
+  }
+
+  .alert-button {
+    // height: 2em;
+    width: 5em;
+    background: initial;
+    border: 0;
+    cursor: pointer;
+
+    i {
+      padding: 0;
+      font-size: 1.5em;
+    }
+  }
+}
