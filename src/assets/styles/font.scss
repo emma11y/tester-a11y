@@ -1,0 +1,52 @@
+/* Webfont: Luciole-Regular */
+@font-face {
+  font-family: 'Luciole';
+  src:
+    url('./src/assets/fonts/Luciole/Luciole-Regular/Luciole-Regular.woff2')
+      format('woff2'),
+    url('./src/assets/fonts/Luciole/Luciole-Regular/Luciole-Regular.woff')
+      format('woff'),
+    url('./src/assets/fonts/Luciole/Luciole-Regular/Luciole-Regular.ttf')
+      format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Luciole';
+  src:
+    url('./src/assets/fonts/Luciole/Luciole-Bold/Luciole-Bold.woff2')
+      format('woff2'),
+    url('./src/assets/fonts/Luciole/Luciole-Bold/Luciole-Bold.woff')
+      format('woff'),
+    url('./src/assets/fonts/Luciole/Luciole-Bold/Luciole-Bold.ttf')
+      format('truetype');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Luciole';
+  src:
+    url('./src/assets/fonts/Luciole/Luciole-Italic/Luciole-Italic.woff2')
+      format('woff2'),
+    url('./src/assets/fonts/Luciole/Luciole-Italic/Luciole-Italic.woff')
+      format('woff'),
+    url('./src/assets/fonts/Luciole/Luciole-Italic/Luciole-Italic.ttf')
+      format('truetype');
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Luciole';
+  src:
+    url('./src/assets/fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.woff2')
+      format('woff2'),
+    url('./src/assets/fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.woff')
+      format('woff'),
+    url('./src/assets/fonts/Luciole/Luciole-BoldItalic/Luciole-BoldItalic.ttf')
+      format('truetype');
+  font-style: italic;
+  font-weight: 700;
+}
